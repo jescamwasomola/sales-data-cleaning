@@ -1,0 +1,20 @@
+Issue,Column,Rows_Affected,Fix_Applied
+Duplicate rows (exact copies),All,500,"Removed duplicates, kept first occurrence"
+Leading/trailing spaces,Customer_Name,485,Stripped whitespace
+Leading/trailing spaces,City,630,Stripped whitespace
+Leading/trailing spaces,Product,400,Stripped whitespace
+Leading/trailing spaces,Payment_Method,291,Stripped whitespace
+"Inconsistent city names (case, hyphens, abbreviations e.g. ZNZ)",City,1514,Mapped to 6 standard city names
+Inconsistent payment method labels (e.g. mpesa / M Pesa / M-PESA),Payment_Method,1458,Mapped to 5 standard methods
+Product names in wrong case,Product,400,Standardised to official product list
+Customer names in UPPERCASE,Customer_Name,474,Converted to Title Case
+Dates stored as text in 3 different formats,Order_Date,2332,Parsed all to a real date (YYYY-MM-DD)
+"Prices stored as text with currency symbols (TZS, /=, TSh, commas)",Unit_Price_TZS,587,"Stripped symbols, converted to numeric"
+Missing unit price,Unit_Price_TZS,200,Filled with the most common price for that product
+Missing values,Customer_Name,400,"Filled with 'Unknown' (kept row, flagged)"
+Missing values,City,300,"Filled with 'Unknown' (kept row, flagged)"
+Missing values,Payment_Method,300,"Filled with 'Unknown' (kept row, flagged)"
+Missing quantity (cannot be inferred),Quantity,199,Removed rows
+Zero or negative quantity,Quantity,100,Removed rows (invalid orders)
+Extreme quantity outliers (>100 units per order),Quantity,50,Removed rows (likely data-entry errors)
+Total does not equal Quantity x Unit Price,Total_TZS,194,Recalculated Total_TZS = Quantity x Unit_Price_TZS
