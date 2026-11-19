@@ -2,8 +2,8 @@
 
 Turning a messy 10,500-row retail sales dataset into a clean, analysis-ready file.
 
-> **Note:** The dataset is **synthetic (simulated)**, created to practise
-> realistic data-quality problems. It is not real company data.
+ **Note:** The dataset is **synthetic**, created to practise
+ realistic data-quality problems. It is not real company data.
 
 ## The Problem
 Raw sales data often arrives with duplicates, inconsistent labels, text-formatted
@@ -42,14 +42,16 @@ Full list: `cleaning_log.csv`
 | `messy_sales_data.csv` / `clean_sales_data.csv` | Before and after |
 
 ## How to Run
+```bash
 pip install pandas numpy openpyxl
 python 01_generate_messy_data.py
 python 02_clean_data.py
 python 03_build_excel.py
+```
 
 ## Tools
 Python (pandas, NumPy), openpyxl, Microsoft Excel
 
 ## Author
-**Jesca Mwasomola**, Data Science student, EASTC, Dar es Salaam
+**Jesca Mwasomola**, Data Science student, EASTC, Dar es Salaam  
 Available for data cleaning and analysis work on Upwork.
